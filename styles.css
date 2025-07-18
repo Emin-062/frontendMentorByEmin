@@ -16,7 +16,7 @@ header {
 }
 
 .ctr {
-    padding-inline: 13%;
+    padding-inline: 11%;
     padding-block-start: 3%;
 }
 
@@ -64,6 +64,7 @@ img {
     flex-direction: column;
     gap: 1rem;
     grid-area: item3;
+    justify-content: space-between;
 }
 
 .hero {
@@ -72,11 +73,12 @@ img {
     "item1 item1 side"
     "item2 item3 side";
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.8rem;
 }
 
 button {
-    width: 50%;
+    width: 75%;
     max-height: 100px;
     cursor: pointer;
     font-size: 1rem;
@@ -93,18 +95,20 @@ button {
     background-color: hsl(240, 100%, 5%);
     color: white;
     grid-area: side;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 7%;
 }
 
 .part {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .side-h {
     color: hsl(35, 77%, 62%);
+    font-size: 2rem;
 }
 
 
@@ -126,14 +130,40 @@ button {
     gap: 2rem;
 }
 
-@media(max-width: 480px) {
+@media(max-width: 900px) {
+    .part {
+        gap: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+    .h1-holder {
+        font-size: 2.5rem;
+    }
+
     .ctr {
-        padding-inline: 5%;
+        padding-inline: 3%;
     }
     
     .nav-links {
         gap: 1.2rem;
     }
+}
+
+@media (max-width: 630px) {
+    .h1-holder {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        grid-template-areas: 
+        "item1 item1 side"
+        "item2 item2 side"
+        "item3 item3 side";
+        grid-template-columns: auto;
+    }
+
 }
 
 @media (max-width: 425px) {
@@ -181,7 +211,7 @@ button {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
     .h1-holder {
         font-size: 2rem;
     }
