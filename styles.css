@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    font-family: "Inter", sans-serif;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -17,32 +21,61 @@ header {
 
 .ctr {
     padding-inline: 11%;
-    padding-block-start: 3%;
+    padding-block-start: 1%;
 }
 
 .nav-link {
     text-decoration: none;
+    color: hsl(236, 13%, 42%);
 }
 
-.bar-line {
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: black;
+.nav-link:hover {
+    color: hsl(5, 85%, 63%);
 }
 
-.bar {
+.num {
+    color: hsl(5, 85%, 63%);
+}
+
+.side-h {
+    color: hsl(35, 77%, 62%);
+    font-size: 2rem;
+}
+
+.child-1 a, .child-2 a, .child-3 a {
+    color: hsl(240, 100%, 5%);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.child-1 a:hover, .child-2 a:hover, .child-3 a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+.side a {
+    color: hsl(36, 100%, 99%);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.side a:hover {
+    color: hsl(35, 77%, 62%);
+}
+
+.side p {
+    color: hsl(236, 13%, 42%);
+}
+
+.bar, .close-bar {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    height: 35px;
-    width: 35px;
     z-index: 6;
-    &:hover{
-        cursor: pointer;
-    }
+    cursor: pointer;
+    background-color: transparent;
+    border: none; 
 }
 
 img {
@@ -53,7 +86,7 @@ img {
     grid-area: item1;
 }
 
-.h1-holder {
+h1 {
     grid-area: item2;
     font-size: 3rem;
     font-weight: 700;
@@ -67,25 +100,39 @@ img {
     justify-content: space-between;
 }
 
+.desktop-img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .hero {
     display: grid;
     grid-template-areas: 
     "item1 item1 side"
-    "item2 item3 side";
+    "item2 item3 side"
+    "child-1 child-2 child-3";
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1rem;
-    row-gap: 0.8rem;
+    row-gap: 1.2rem;
 }
 
-button {
-    width: 75%;
+.hero-button {
+    width: 60%;
     max-height: 100px;
     cursor: pointer;
     font-size: 1rem;
-    background-color: black;
+    background-color: hsl(5, 85%, 63%);
     border: none;
-    color: white;
+    color: black;
     padding: 4%;
+    font-weight: 700;
+}
+
+.hero-button:hover {
+    background-color: black;
+    color: white;
+    transition: all 1s;
 }
 
 .side {
@@ -106,39 +153,57 @@ button {
     gap: 1rem;
 }
 
-.side-h {
-    color: hsl(35, 77%, 62%);
-    font-size: 2rem;
-}
-
-
 .part-ch {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.child {
+.child-1 {
     display: flex;
-    flex-direction: row;
+    grid-area: child-1;
+}
+
+.child-2 {
+    display: flex;
+    grid-area: child-2;
+}
+
+.child-3 {
+    display: flex;
+    grid-area: child-3;
+}
+
+.child-1, .child-2, .child-3 {
     gap: 2rem;
 }
 
-.under {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+.img-under {
+    height: 130px;
+    width: auto;
+}
+
+@media (max-width:1280px) {
+    .ctr {
+        padding-inline: 5%;
+    }
 }
 
 @media(max-width: 900px) {
+    .hero {
+        grid-template-areas: 
+        "item1 item1 side"
+        "item2 item3 side"
+        "child-1 child-1 child-1"
+        "child-2 child-2 child-2"
+        "child-3 child-3 child-3";
+    }
+
     .part {
         gap: 1rem;
     }
 
-    button {
-        width: 100%;
-    }
-    .h1-holder {
+    h1 {
         font-size: 2.5rem;
     }
 
@@ -152,7 +217,7 @@ button {
 }
 
 @media (max-width: 630px) {
-    .h1-holder {
+    h1 {
         font-size: 2.5rem;
     }
 
@@ -160,15 +225,53 @@ button {
         grid-template-areas: 
         "item1 item1 side"
         "item2 item2 side"
-        "item3 item3 side";
+        "item3 item3 side"
+        "child-1 child-1 child-1"
+        "child-2 child-2 child-2"
+        "child-3 child-3 child-3";
         grid-template-columns: auto;
     }
 
 }
 
-@media (max-width: 425px) {
+@media (min-width: 550px) {
+    body {
+        background-color: white !important;
+    }
+    
+    .mobile-img {
+        display: none  !important;
+    }
+
+    .desktop-img {
+        display: flex !important;
+    }
+
+    .nav-links {
+        display: flex   !important;
+    }
+
+    .bar, .close-bar {
+        display: none   !important;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .mobile-img {
+        display: flex;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
     nav {
         display: none;
+    }
+
+    .nav-link {
+        color: hsl(240, 100%, 5%);
     }
 
     .forMobilBar{
@@ -179,46 +282,40 @@ button {
         width: 70%;
         height: 100vh;
         background-color: white;
-        padding-top: 15px;
+        padding-top: 30%;
+        padding-left: 3%;
         z-index: 5;
     }
 
-    body {
-        background-color: hsl(233, 8%, 79%);
-    }
 
-    .forMobilBar .nav-links{
+    .forMobilBar .nav-links {
+        display: flex;
         flex-direction: column;
         gap: 0;
-        &>*{
-            padding: 15px;
-            transition: all  1s;
-            &:hover{
-                background-color: #6bb6b6;
-                
-            }
-        }
-    }
-}
-
-@media (min-width: 425px) {
-    .nav-links {
-        display: flex;
     }
 
-    .bar {
-        display: none;
+    .forMobilBar .nav-links > * {
+        padding: 15px;
+        transition: all 1s;
     }
-}
 
-@media (max-width: 550px) {
+    .forMobilBar .nav-links > *:hover {
+        cursor: pointer; 
+    }
+
+
     .h1-holder {
         font-size: 2rem;
     }
+
     .hero {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }   
+
+    button {
+        padding: 3%;
     }
 
     .under {
