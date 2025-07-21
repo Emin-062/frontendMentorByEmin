@@ -40,8 +40,8 @@ Surface Pro 7 view:
 ![](./screenshots/surface%20pro%207%20mode.png)
 ### Links
 
-- Solution URL: [https://github.com/YourUsername/news-homepage](https://github.com/YourUsername/news-homepage)
-- Live Site URL: [https://your-live-site-url.com](https://your-live-site-url.com)
+- Solution URL: [[https://github.com/YourUsername/news-homepage](https://github.com/YourUsername/news-homepage)](https://github.com/Emin-062/frontendMentorByEmin.git)
+- Live Site URL: [[https://your-live-site-url.com](https://emin-062.github.io/frontendMentorByEmin/)]([https://your-live-site-url.com](https://emin-062.github.io/frontendMentorByEmin/))
 
 ## My process
 
@@ -80,10 +80,8 @@ Moving forward, I want to:
 - [MDN Web Docs](https://developer.mozilla.org/) – Comprehensive reference for web technologies.  
 
 ## Author
-
-- Website - [Your Name](https://your-website.com)  
-- Frontend Mentor - [@YourUsername](https://www.frontendmentor.io/profile/YourUsername)  
-- Twitter - [@YourTwitterHandle](https://twitter.com/YourTwitterHandle)  
+- Frontend Mentor - [@Emin-062](https://www.frontendmentor.io/profile/Emin-062)
+- LinkedIn - [@Emin Naggayev](https://www.linkedin.com/in/emin-naggayev-39017a373/)  
 
 ## Acknowledgments
 
